@@ -1,72 +1,66 @@
 package MinStack;
 
-class MinStack {
+import java.util.ArrayList;
 
-    private Node top;
-    private Node min;
+class MinStack {
 
     class Node {
         private int value;
-        private Node next;
+        private int minValue;
 
-        public Node(int val) {
-            this.value = val;
-            this.next = null;
-        }
-
-        public Node(int val, Node next) {
-            this.value = val;
-            this.next = next;
+        public Node(int value, int minValue) {
+            this.value = value;
+            this.minValue = minValue;
         }
     }
 
+    private ArrayList<Node> stack;
+    private int capacity;
+
     public MinStack() {
-        top = null;
-        min = null;
+        stack = new ArrayList<>();
+        capacity = 0;
     }
 
     public void push(int val) {
-        Node newNode = new Node(val);
-        if (top == null) {
-            this.top = newNode;
-            this.min = newNode;
-        }
-        else {
-            newNode.next = this.top;
-            this.top = newNode;
 
-            if (this.top.value < this.min.value)
-                this.min = this.top;
+        if (capacity < 1) {
+            Node newNode = new Node(val, val);
+            stack.add(newNode);
+
+        } else {
+            Node prevNode = stack.get(capacity - 1);
+            int minVal = Integer.min(prevNode.minValue, val);
+            Node newNode = new Node(val, minVal);
+            stack.add(newNode);
         }
+
+        capacity++;
     }
 
     public void pop() {
-        if (top == null)
+        if (isEmpty())
             throw new RuntimeException("Stack Empty Exception");
 
-        Node removeNode = this.top;
-        this.top = this.top.next;
-
-        if (removeNode == this.min && this.top != null) {
-            this.min = this.top;
-            Node nd = this.top.next;
-            while (nd != null) {
-                if (nd.value < this.min.value)
-                    this.min = nd;
-                nd = nd.next;
-            }
-        }
+        stack.remove(capacity - 1);
+        capacity--;
     }
 
     public int top() {
-        if (top == null)
+        if (isEmpty())
             throw new RuntimeException("Stack Empty Exception");
-        return this.top.value;
+        return this.stack.get(capacity - 1).value;
     }
 
     public int getMin() {
-        if (top == null)
+        if (isEmpty())
             throw new RuntimeException("Stack Empty Exception");
-        return this.min.value;
+        return this.stack.get(capacity - 1).minValue;
+    }
+
+    private boolean isEmpty() {
+        if (capacity < 1)
+            return true;
+        return false;
     }
 }
