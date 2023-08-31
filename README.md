@@ -28,3 +28,4 @@
 | 18 | [74. Search a 2D Matrix](./src/SearchA2DMatrix/Solution.java)                                                       | [**_link_**](https://nahyeon99.tistory.com/23) |
 | 19 | [155. Min Stack](./src/MinStack/MinStack.java)                                                                      | [**_link_**](https://nahyeon99.tistory.com/24) |
 | 20 | [150. Evaluate Reverse Polish Notation](./src/EvaluateReversePolishNotation/Solution2.java)                         | [**_link_**](https://nahyeon99.tistory.com/25) |
+| 21 | [1. Two Sum](./src/TwoSum/Solution2.java)                                                                           | [**_link_**](https://nahyeon99.tistory.com/26) |
