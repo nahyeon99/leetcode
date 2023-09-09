@@ -34,3 +34,5 @@
 | 24 | [148. Sort List](./src/SortList/Solution.java)                                                                             | [**_link_**](https://nahyeon99.tistory.com/28) |
 | 25 | [33. Search in Rotated Sorted Array](./src/SearchInRotatedSortedArray/Solution.java)                                       | [**_link_**](https://nahyeon99.tistory.com/29) |
 | 26 | [153. Find Minimum in Rotated Sorted Array](./src/FindMinimumInRotatedSortedArray/Solution.java)                                | [**_link_**](https://nahyeon99.tistory.com/30) |
+| 27 | [530. Minimum Absolute Difference in BST](./src/MinimumAbsoluteDifferenceInBST/Solution.java)                                | [**_link_**](https://nahyeon99.tistory.com/32) |
+| 28 | [230. Kth Smallest Element in a BST](./src/KthSmallestElementinaBST/Solution.java)                                | [**_link_**](https://nahyeon99.tistory.com/33) |
