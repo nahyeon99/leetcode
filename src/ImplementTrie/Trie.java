@@ -2,6 +2,7 @@ package ImplementTrie;
 
 import java.util.HashMap;
 
+// Runtime 53ms, Memory 54.9MB
 class Trie {
 
     private Node root;
