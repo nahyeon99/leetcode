@@ -47,6 +47,7 @@
 
 |    | Problem                                                    | Blog                                           |
 |:--:|:-----------------------------------------------------------|:-----------------------------------------------|
-| 01 | [11659. 구간 합 구하기 4](./src/boj/q11659_구간_합_구하기_4/main.java) | [**_link_**](https://nahyeon99.tistory.com/36) |
-| 02 | [11660. 구간 합 구하기 5](./src/q11660_구간_합_구하기_5/main.java)     | [**_link_**](https://nahyeon99.tistory.com/37) |
+| 01 | [11659. 구간 합 구하기 4](./src/boj/q11659_구간_합_구하기_4/Main.java) | [**_link_**](https://nahyeon99.tistory.com/36) |
+| 02 | [11660. 구간 합 구하기 5](./src/boj/q11660_구간_합_구하기_5/Main.java) | [**_link_**](https://nahyeon99.tistory.com/37) |
+| 03 | [1253. 좋다](./src/boj/q1253_좋다/Main.java)                   | [**_link_**](https://nahyeon99.tistory.com/38) |
 
