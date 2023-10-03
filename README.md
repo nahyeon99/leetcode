@@ -50,4 +50,7 @@
 | 01 | [11659. 구간 합 구하기 4](./src/boj/q11659_구간_합_구하기_4/Main.java) | [**_link_**](https://nahyeon99.tistory.com/36) |
 | 02 | [11660. 구간 합 구하기 5](./src/boj/q11660_구간_합_구하기_5/Main.java) | [**_link_**](https://nahyeon99.tistory.com/37) |
 | 03 | [1253. 좋다](./src/boj/q1253_좋다/Main.java)                   | [**_link_**](https://nahyeon99.tistory.com/38) |
+| 04 | [12891. DNA 비밀번호](./src/boj/q12891_DNA_비밀번호/Main.java)     | [**_link_**](https://nahyeon99.tistory.com/39) |
+| 05 | [11003. 최솟값 찾기](./src/boj/q11003_최솟값_찾기/Main.java)         | [**_link_**](https://nahyeon99.tistory.com/40) |
+| 06 | [17298. 오큰수](./src/boj/q17298_오큰수/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/41) |
 
