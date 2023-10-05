@@ -53,4 +53,8 @@
 | 04 | [12891. DNA 비밀번호](./src/boj/q12891_DNA_비밀번호/Main.java)     | [**_link_**](https://nahyeon99.tistory.com/39) |
 | 05 | [11003. 최솟값 찾기](./src/boj/q11003_최솟값_찾기/Main.java)         | [**_link_**](https://nahyeon99.tistory.com/40) |
 | 06 | [17298. 오큰수](./src/boj/q17298_오큰수/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/41) |
+| 07 | [2164. 카드 2](./src/boj/q2164_카드_2/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/42) |
+| 08 | [11286. 절댓값 힙](./src/boj/q11286_절댓값_힙_구현하기/Main.java)      | [**_link_**](https://nahyeon99.tistory.com/43) |
+| 09 | [1377. 버블 소트](./src/boj/q1377_버블_소트/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/44) |
+| 10  | [11399. ATM](./src/boj/q11399_ATM/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/45) |
 
