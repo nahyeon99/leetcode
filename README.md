@@ -56,5 +56,10 @@
 | 07 | [2164. 카드 2](./src/boj/q2164_카드_2/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/42) |
 | 08 | [11286. 절댓값 힙](./src/boj/q11286_절댓값_힙_구현하기/Main.java)      | [**_link_**](https://nahyeon99.tistory.com/43) |
 | 09 | [1377. 버블 소트](./src/boj/q1377_버블_소트/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/44) |
-| 10  | [11399. ATM](./src/boj/q11399_ATM/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/45) |
+| 10 | [11399. ATM](./src/boj/q11399_ATM/Main.java)               | [**_link_**](https://nahyeon99.tistory.com/45) |
+| 11 | [11004. K번째 수](./src/boj/q11004_k번째_수/Main.java)           | [**_link_**](https://nahyeon99.tistory.com/46) |
+| 12 | [11724. ATM](./src/boj/q11724_연결_요소의_개수/Main.java)         | [**_link_**](https://nahyeon99.tistory.com/47) |
+| 13 | [2023. 신기한 소수](./src/boj/q2023_신기한_소수/Main.java)           | [**_link_**](https://nahyeon99.tistory.com/48) |
+| 14 | [1260. DFS와 BFS](./src/boj/q1260_DFS와_BFS/Main.java)       | [**_link_**](https://nahyeon99.tistory.com/49) |
+| 15 | [2178. 미로 탐색](./src/boj/q2178_미로_탐색/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/50) |
 
