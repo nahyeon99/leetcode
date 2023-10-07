@@ -62,4 +62,8 @@
 | 13 | [2023. 신기한 소수](./src/boj/q2023_신기한_소수/Main.java)           | [**_link_**](https://nahyeon99.tistory.com/48) |
 | 14 | [1260. DFS와 BFS](./src/boj/q1260_DFS와_BFS/Main.java)       | [**_link_**](https://nahyeon99.tistory.com/49) |
 | 15 | [2178. 미로 탐색](./src/boj/q2178_미로_탐색/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/50) |
+| 16 | [1920. 수 찾기](./src/boj/q1920_수_찾기/Main.java)               |                                                |
+| 17 | [2343. 기타 레슨](./src/boj/q2343_기타_레슨/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/51) |
+| 18 | [1300. K번째 수](./src/boj/q1300_K번째_수/Main.java)             | [**_link_**](https://nahyeon99.tistory.com/52) |
+| 19 | [1929. 소수 구하기](./src/boj/q1929_소수_구하기/Main.java)           | [**_link_**](https://nahyeon99.tistory.com/53) |
 
