@@ -1,101 +1,81 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
 
-	static FastReader sc = new FastReader();
+	static FastReader scan = new FastReader();
+	static StringBuilder sb = new StringBuilder();
 
-	static int BNPMoney, BNPShareCnt, timingMoney, timingShareCnt = 0;
-	static List<Integer> stock;
+	static int BNP_CNT = 0, BNP_MONEY = 0;
+	static int TIMING_CNT = 0, TIMING_MONEY = 0;
+	static final int[] money = new int[14];
 
-	public static void main(String[] args) throws IOException {
-		int money = sc.nextInt();
-		BNPMoney = money;
-		timingMoney = money;
-
-		stock = new ArrayList<>(14);
-
-		int[] stockList = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-
+	static void input() {
+		int budget = scan.nextInt();
+		BNP_MONEY = budget;
+		TIMING_MONEY = budget;
 		for (int i = 0; i < 14; i++) {
-			stock.add(stockList[i]);
+			money[i] = scan.nextInt();
 		}
-
-		calculateBnp();
-		calculateTiming();
-
-		System.out.println(match());
 	}
 
-	static void calculateBnp() {
-		for (int i = 0; i < stock.size(); i++) {
-			if (BNPMoney >= stock.get(i)) {
-				int buyCnt = BNPMoney / stock.get(i);
-				BNPShareCnt += buyCnt;
-				BNPMoney -= buyCnt * stock.get(i);
+	static void calculateBnp(int idx) {
+		if (idx >= 14 || BNP_MONEY <= 0)
+			return;
 
-				if (BNPMoney <= 0) {
-					break;
-				}
-			}
+		int buyCnt = BNP_MONEY / money[idx];
+		if (buyCnt > 0) {
+			BNP_CNT += buyCnt;
+			BNP_MONEY = (BNP_MONEY % money[idx]);
 		}
+		calculateBnp(idx + 1);
 	}
 
 	static void calculateTiming() {
-		for (int day = 3; day < stock.size(); day++) {
-			boolean buyCond = buy(day);
-			if (!buyCond) {
-				sell(day);
+		int decreaseCnt = 0, increaseCnt = 0;
+		for (int i = 1; i < 14; i++) {
+			if (decreaseCnt == 2 && TIMING_MONEY / money[i] > 0) { // 전량 매수
+				TIMING_CNT += (TIMING_MONEY / money[i]);
+				TIMING_MONEY = (TIMING_MONEY % money[i]);
+
+				decreaseCnt = 0;
+				increaseCnt = 0;
+			} else if (increaseCnt == 2 && TIMING_CNT > 0) { // 전량 매도
+				int profit = TIMING_CNT * money[i];
+				TIMING_CNT = 0;
+				TIMING_MONEY += profit;
+
+				decreaseCnt = 0;
+				increaseCnt = 0;
+			}
+
+			if (money[i] < money[i-1]) {
+				decreaseCnt++;
+				increaseCnt = 0;
+			} else if (money[i] > money[i-1]) {
+				increaseCnt++;
+				decreaseCnt = 0;
 			}
 		}
 	}
 
-	// 3일 연속 가격이 전일 대비 하락한다면, 전량 매수한다.
-	static boolean buy(int day) {
+	public static void main(String[] args) {
+		input();
+		calculateBnp(0);
+		calculateTiming();
 
-		int dayBefore3 = stock.get(day - 3);
-		int dayBefore2 = stock.get(day - 2);
-		int dayBefore1 = stock.get(day - 1);
-		int today = stock.get(day);
+		// print result
+		int bnpResult = BNP_MONEY + BNP_CNT * money[13];
+		int timingResult = TIMING_MONEY + TIMING_CNT * money[13];
 
-		if (dayBefore3 > dayBefore2 && dayBefore2 > dayBefore1 && dayBefore1 > today) {
-			int buyCnt = timingMoney / stock.get(day);
-			timingShareCnt += buyCnt;
-			timingMoney -= buyCnt * stock.get(day);
-			return true;
-		}
-		return false;
-	}
-
-	// 3일 연속 가격이 전일 대비 상승한다면, 전량 매도한다.
-	static void sell(int day) {
-
-		int dayBefore3 = stock.get(day - 3);
-		int dayBefore2 = stock.get(day - 2);
-		int dayBefore1 = stock.get(day - 1);
-		int today = stock.get(day);
-
-		if (dayBefore3 < dayBefore2 && dayBefore2 < dayBefore1 && dayBefore1 < today) {
-			timingMoney += timingShareCnt * stock.get(day);
-			timingShareCnt = 0;
-		}
-	}
-
-	static String match() {
-		int BNPResult = BNPMoney + BNPShareCnt * stock.get(stock.size() - 1);
-		int timingResult = timingMoney + timingShareCnt * stock.get(stock.size() - 1);
-
-		if (BNPResult == timingResult)
-			return "SAMESAME";
-		else if (BNPResult > timingResult)
-			return "BNP";
+		if (bnpResult > timingResult)
+			sb.append("BNP");
+		else if(timingResult > bnpResult)
+			sb.append("TIMING");
 		else
-			return "TIMING";
+			sb.append("SAMESAME");
+
+		System.out.println(sb);
 	}
 
 	static class FastReader {
@@ -119,16 +99,6 @@ public class Main {
 
 		int nextInt() {
 			return Integer.parseInt(next());
-		}
-
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
 		}
 	}
 }
